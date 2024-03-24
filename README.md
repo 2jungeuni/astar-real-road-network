@@ -1,12 +1,10 @@
 ## astar-real-road-network
 Routing algorithm for real road networks, especially A*.
-***
 ### :computer: Dataset
 It uses New York City's actual road network.
 The data comes from [1].
 - There are 96,570 nodes.
 - There are 260,855 links.
-***
 ### :memo: Problem formulation
 This algorithm generates a path considering three metrics.
 - Street length (meters): There are pre-calculated street lengths from [1]. The heuristic function for distance metric uses Haversine distance.
@@ -15,19 +13,21 @@ This algorithm generates a path considering three metrics.
 $$f_t = \beta_1 \cos\theta + \beta_2 v \sin\theta + \beta_3 v^2 + \beta_4 a + \beta_5 \frac{a}{v} + \beta_6 \frac{1}{v} + \beta_7$$
 $$E_{CO_2} = 2.32 \times f_t$$
 
-| parameters |  valaue  |
-|:----------:|:--------:|
-| $\beta_1$  |   테스트2   |
-| $\beta_2$  |   테스트2   |
-| $\beta_3$  |   테스트2   |
-***
+The parameters in the carbon emission equation are as follows:
+
+| parameters |  valaue   |
+|:----------:|:---------:|
+| $\beta_1$  |   -2.68   |
+| $\beta_2$  |   0.450   |
+| $\beta_3$  | 0.0000650 |
+| $\beta_4$  |  0.00411  |
+| $\beta_5$  |   0.266   |
+| $\beta_6$  |   0.533   |
+| $\beta_7$  |   2.77    |
 ### :envelope: Python modules
 pybind11
-***
 ### :runner: Run demo code
-***
 ### :earth_asia: Visualization
-***
 ### :pushpin: References
 [1] Donovan, Brian; Work, Dan (2016): New York City Taxi Trip Data (2010-2013). University of Illinois at Urbana-Champaign. https://doi.org/10.13012/J8PN93H8  
 [2] Weiliang Zeng, Tomio Miwa, Takayuki Morikawa,
