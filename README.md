@@ -13,9 +13,9 @@ This algorithm generates a path considering three metrics.
 - Travel time (seconds): It is calculated by dividing the distance by the speed limit from [3]; see [4] for more details.
 - Carbon emission (g/m): It can be estimated based on elevation, speed, and acceleration as driving from the equation in [2]. <ins>The algorithm assumes all vehicles drive at the speed limit (i.e., a=0).</ins>  
 $$f_t = \beta_1 \cos\theta + \beta_2 v \sin\theta + \beta_3 v^2 + \beta_4 a + \beta_5 \frac{a}{v} + \beta_6 \frac{1}{v} + \beta_7$$
-$$E_{CO_2} = 2.32 \times f_t$$  
-|parameter|value|
-|:---:|:---:|
+$$E_{CO_2} = 2.32 \times f_t$$   
+|parameter|value|  
+|:---:|:---:|  
 |a|b|
 ***
 ### :envelope: Python modules
