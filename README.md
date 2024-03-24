@@ -12,18 +12,6 @@ This algorithm generates a path considering three metrics.
 - Carbon emission (g/m): It can be estimated based on elevation, speed, and acceleration as driving from the equation in [2]. <ins>The algorithm assumes all vehicles drive at the speed limit (i.e., a=0).</ins>  
 $$f_t = \beta_1 \cos\theta + \beta_2 v \sin\theta + \beta_3 v^2 + \beta_4 a + \beta_5 \frac{a}{v} + \beta_6 \frac{1}{v} + \beta_7$$
 $$E_{CO_2} = 2.32 \times f_t$$
-
-The parameters in the carbon emission equation are as follows:
-
-| parameters |  valaue   |
-|:----------:|:---------:|
-| $\beta_1$  |   -2.68   |
-| $\beta_2$  |   0.450   |
-| $\beta_3$  | 0.0000650 |
-| $\beta_4$  |  0.00411  |
-| $\beta_5$  |   0.266   |
-| $\beta_6$  |   0.533   |
-| $\beta_7$  |   2.77    |
 ### :envelope: Python modules
 pybind11
 ### :runner: Run demo code
