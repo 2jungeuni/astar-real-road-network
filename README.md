@@ -8,8 +8,8 @@ The data comes from [1].
 ### :memo: Problem formulation
 This algorithm generates a path considering three metrics.
 - Street length (meters): There are pre-calculated street lengths from [1]. The heuristic function for distance metric uses Haversine distance.
-- Travel time (seconds): It is calculated by dividing the distance by the speed limit from [3]; see [4] for more details.
-- Carbon emission (g/m): It can be estimated based on elevation, speed, and acceleration as driving from the equation in [2]. <ins>The algorithm assumes all vehicles drive at the speed limit (i.e., a=0).</ins>  
+- Travel time (seconds): It is calculated by dividing the distance by the speed limit from [3]; see [4] for more details. The heuristic function for this uses Haversine distance divided by New York City's maximum speed limit.
+- Carbon emission (g/m): It can be estimated based on elevation, speed, and acceleration as driving from the equation in [2]. <ins>The algorithm assumes all vehicles drive at the speed limit (i.e., a=0).</ins> The heuristic function for this is simply the minimum emissions.  
 $$f_t = \beta_1 \cos\theta + \beta_2 v \sin\theta + \beta_3 v^2 + \beta_4 a + \beta_5 \frac{a}{v} + \beta_6 \frac{1}{v} + \beta_7$$
 $$E_{CO_2} = 2.32 \times f_t$$
 ### :envelope: Python modules
@@ -22,5 +22,4 @@ pybind11
 Prediction of vehicle CO2 emission and its application to eco-routing navigation, Transportation Research Part C: Emerging Technologies,
 Volume 68, 2016, Pages 194-214. https://doi.org/10.1016/j.trc.2016.04.007  
 [3] https://data.cityofnewyork.us/Transportation/VZV_Speed-Limits/7n5j-865y  
-[4] https://github.com/2jungeuni/preprocessing-for-routing  
-[5]
+[4] https://github.com/2jungeuni/preprocessing-for-routing
