@@ -12,6 +12,7 @@ This algorithm generates a path considering three metrics.
 - Carbon emission (g/m): It can be estimated based on elevation, speed, and acceleration as driving from the equation in [2]. <ins>The algorithm assumes all vehicles drive at the speed limit (i.e., a=0).</ins> The heuristic function for this is simply the minimum emissions.  
 $$f_t = \beta_1 \cos\theta + \beta_2 v \sin\theta + \beta_3 v^2 + \beta_4 a + \beta_5 \frac{a}{v} + \beta_6 \frac{1}{v} + \beta_7$$
 $$E_{CO_2} = 2.32 \times f_t$$
+
 The cost function of a path is a linear combination of three metrics, with adjustable weights.
 $$\text{cost} = \alpha \cdot \text{street length} + \beta \cdot \text{travel time} + \gamma \cdot \text{carbon emission}$$
 ### :envelope: Python modules
