@@ -5,6 +5,7 @@
 #include "astar.h"
 
 #include <array>
+#include <fstream>
 
 const float PI = 3.141592; // Pi
 
@@ -89,13 +90,6 @@ double Graph::heuristic(std::pair<double, double> frm_coord, std::pair<double, d
     + this->gamma * this->heu_carbon_emission(frm_coord, to_coord);
 }
 
-// constructor
-Graph::Graph(double alpha, double beta, double gamma) {
-    this->alpha = alpha;
-    this->beta = beta;
-    this->gamma = gamma;
-}
-
 // Initialize
 void Graph::initialize() {
     for (auto elem: this->graph) {
@@ -173,15 +167,16 @@ double Graph::route_planning(int start_node, int end_node) {
     return end->cost;
 }
 
-void Graph::route_planning_details(int start_node, int end_node,
-                                   std::vector<double>* pLongitude, std::vector<double>* pLatitude,
-                                   std::vector<double>* pStamp) {
+void Graph::route_planning_details(int start_node, int end_node) {
     Vertex* current;
     std::set<Vertex*> current_adjacent;
     std::set<double> heap;
     std::set<Vertex*> unvisited_queue;
     double pop;
     double new_cost;
+
+    std::vector<double> longitude;
+    std::vector<double> latitude;
 
     Vertex* start = this->get_vertex(start_node);
     Vertex* end = this->get_vertex(end_node);
@@ -225,15 +220,22 @@ void Graph::route_planning_details(int start_node, int end_node,
     // Find the optimal path ...
     Vertex* cause = end;
     while (cause != start) {
-        (*pLongitude).push_back(cause->coord.first);
-        (*pLatitude).push_back(cause->coord.second);
-        (*pStamp).push_back(cause->adjacent[cause->prev]);
+        (longitude).push_back(cause->coord.first);
+        (latitude).push_back(cause->coord.second);
         cause = cause->prev;
     }
-    (*pLongitude).push_back(start->coord.first);
-    (*pLatitude).push_back(start->coord.second);
+    (longitude).push_back(start->coord.first);
+    (latitude).push_back(start->coord.second);
 
-    std::reverse((*pLongitude).begin(), (*pLongitude).end());
-    std::reverse((*pLatitude).begin(), (*pLatitude).end());
-    std::reverse((*pStamp).begin(), (*pStamp).end());
+    std::reverse((longitude).begin(), (longitude).end());
+    std::reverse((latitude).begin(), (latitude).end());
+
+    std::ofstream result;
+    result.open("./result/optimal_path.csv");
+
+    for (int i = 0; i < longitude.size(); i++) {
+        result << longitude[i] << "," << latitude[i] << "\n";
+    }
+
+    result.close();
 }

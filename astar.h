@@ -65,13 +65,8 @@ public:
     double max_speed_limit = 22.352;
     double min_carbon_emission = -3.609;
 
-    // weights of cost function
-    double alpha = 0.0;
-    double beta = 0.0;
-    double gamma = 0.0;
-
     // constructor
-    Graph(double alpha, double beta, double gamma);
+    Graph(double alpha, double beta, double gamma) : alpha(alpha), beta(beta), gamma(gamma) {};
 
     // initialize
     void initialize();
@@ -92,14 +87,14 @@ public:
     double heuristic(std::pair<double, double> frm_coord, std::pair<double, double> to_coord);
 
     double route_planning(int start_node, int end_node);
-    void route_planning_details(int start_node,
-                                int end_node,
-                                std::vector<double>* pLongitude,
-                                std::vector<double>* pLatitude,
-                                std::vector<double>* pStamp);
+    void route_planning_details(int start_node, int end_node);
 
-    // destructor
-    ~Graph();
+    ~Graph() {};
+
+private:
+    double alpha = 0.0;
+    double beta = 0.0;
+    double gamma = 0.0;
 };
 
 #endif //ROUTING_ASTAR_H
