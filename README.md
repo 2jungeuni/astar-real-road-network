@@ -24,6 +24,10 @@ Using APT,
 sudo apt update
 sudo apt install pybind11-dev
 ```
+#### Compile
+```bash
+c++ -O3 -Wall -shared -std=c++11 -fPIC $(python3 -m pybind11 --includes) astar.h astar.cpp planner.cpp -o planner.so
+```
 
 ### :runner: Run demo code
 ### :earth_asia: Visualization
