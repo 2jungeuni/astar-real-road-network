@@ -17,7 +17,7 @@ The cost function of a path is a linear combination of three metrics, with adjus
 $$\text{cost} = \alpha \cdot \text{street length} + \beta \cdot \text{travel time} + \gamma \cdot \text{carbon emission}$$
 That is, setting $\alpha=1, \beta=0$ and $\gamma=0$ calculates the shortest path; $\alpha=0, \beta=1$ and $\gamma=0$ yields the fastest route; and $\alpha=0, \beta=0$ and $\gamma=1$ determines the most eco-friendly path.
 ### :envelope: Python modules
-pybind11
+pybind11 is a header-only library facilitating seamless C++ and Python interoperability with minimal code, making it straightforward to expose C++ functions and classes to Python.
 ### :runner: Run demo code
 ### :earth_asia: Visualization
 ### :pushpin: References
