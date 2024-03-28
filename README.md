@@ -54,7 +54,7 @@ If you want to get the eco-friendly path,
 python3 main.py -f ${start_latitude} ${start_longitude} -t ${end_latitude} ${end_longitude} -w 0 0 1 -s ${save_or_not}
 ```
 ### :earth_asia: Visualization
-<img src="./img/shortest.png" width="180" height="150"> <img src="./img/fatest.png" width="180" height="150"> <img src="./img/eco_friendly.png" width="180" height="150">
+<img src="./img/shortest.png" width="210" height="180"> <img src="./img/fatest.png" width="210" height="180"> <img src="./img/eco_friendly.png" width="210" height="180">
 
 From the left, the shortest path, the fatest path, and the most eco-friendly path.
 
