@@ -233,6 +233,7 @@ void Graph::route_planning_details(int start_node, int end_node) {
     std::ofstream result;
     result.open("./result/optimal_path.csv");
 
+    result << "longitude" << "," << "latitude" << "\n";
     for (int i = 0; i < longitude.size(); i++) {
         result << longitude[i] << "," << latitude[i] << "\n";
     }

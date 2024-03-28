@@ -54,6 +54,10 @@ If you want to get the eco-friendly path,
 python3 main.py -f ${start_latitude} ${start_longitude} -t ${end_latitude} ${end_longitude} -w 0 0 1 -s ${save_or_not}
 ```
 ### :earth_asia: Visualization
+<img src="./img/shortest.png" width="180" height="150"> <img src="./img/fatest.png" width="180" height="150"> <img src="./img/eco_friendly.png" width="180" height="150">
+
+From the left, the shortest path, the fatest path, and the most eco-friendly path.
+
 ### :pushpin: References
 [1] Donovan, Brian; Work, Dan (2016): New York City Taxi Trip Data (2010-2013). University of Illinois at Urbana-Champaign. https://doi.org/10.13012/J8PN93H8  
 [2] Weiliang Zeng, Tomio Miwa, Takayuki Morikawa,
