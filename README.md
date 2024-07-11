@@ -57,11 +57,6 @@ python3 main.py -f ${start_latitude} ${start_longitude} -t ${end_latitude} ${end
 #### Example 1. From (40.6652, -73.9182) to (40.6291, -74.0385)
 <img src="./img/shortest.png" width="210" height="180"> <img src="./img/fatest.png" width="210" height="180"> <img src="./img/eco_friendly.png" width="210" height="180">
 
-#### Example 2. 
-
-#### Example 3.
-
-#### Example 4. 
 From the left, the shortest path, the fatest path, and the most eco-friendly path.
 
 ### References
