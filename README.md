@@ -15,6 +15,7 @@ $$E_{CO_2} = 2.32 \times f_t$$
 
 The cost function of a path is a linear combination of three metrics, with adjustable weights.
 $$\text{cost} = \alpha \cdot \text{street length} + \beta \cdot \text{travel time} + \gamma \cdot \text{carbon emission}$$
+
 That is, setting $\alpha=1, \beta=0$ and $\gamma=0$ calculates the shortest path; $\alpha=0, \beta=1$ and $\gamma=0$ yields the fastest path; and $\alpha=0, \beta=0$ and $\gamma=1$ determines the most eco-friendly path.
 ### Python modules
 pybind11 is a header-only library facilitating seamless C++ and Python interoperability with minimal code, making it straightforward to expose C++ functions and classes to Python.
